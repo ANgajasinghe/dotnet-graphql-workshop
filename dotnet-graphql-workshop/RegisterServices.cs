@@ -1,5 +1,6 @@
 ﻿using dotnet_graphql_workshop.Persistence;
 using dotnet_graphql_workshop.Types;
+using HotChocolate;
 using HotChocolate.Execution;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +17,6 @@ namespace dotnet_graphql_workshop
             services.AddDbContext<AppDbContext>(o =>
             {
                 o.UseSqlServer(connectionString);
-                o.LogTo(Console.WriteLine, LogLevel.Information);
             });
 
             services.AddMediatR(Assembly.GetExecutingAssembly());
@@ -28,7 +28,24 @@ namespace dotnet_graphql_workshop
                 .AddQueryType<Query>()
                 .AddMutationType<Mutation>()
                 .ConfigureResolverCompiler(c => c.AddService<AppDbContext>())
-                .ModifyOptions(o => o.DefaultResolverStrategy = ExecutionStrategy.Serial);
+                .ModifyOptions(o => o.DefaultResolverStrategy = ExecutionStrategy.Serial)
+                .AddProjections()
+                .AddFiltering()
+                .AddErrorFilter(error => 
+                {
+
+                    if (error.Exception != null) 
+                    {
+                      error = error.WithMessage(error.Exception.Message);
+                    }
+
+                    return error;
+                })
+                .ModifyRequestOptions(opt =>
+                {
+                    // opt.IncludeExceptionDetails = false;
+                   
+                });
 
             return services;
         }

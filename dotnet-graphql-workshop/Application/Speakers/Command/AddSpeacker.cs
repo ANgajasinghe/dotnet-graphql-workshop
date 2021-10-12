@@ -11,7 +11,7 @@ namespace dotnet_graphql_workshop.Application.Speakers.Command
 {
 
     // input
-    public record AddSpeaker (string Name, string Bio, string WebSite) : IRequest<AddSpeakerPayload>;
+    public record AddSpeaker (string Name, string? Bio, string? WebSite) : IRequest<AddSpeakerPayload>;
 
 
     // implementation

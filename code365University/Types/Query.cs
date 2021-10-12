@@ -5,10 +5,10 @@ public class Query
     /// <summary>
     /// Gets all students.
     /// </summary>
-    //[UsePaging]
-    //[UseProjection]
-    //[UseFiltering]
-    //[UseSorting]
+    [UsePaging]
+    [UseProjection]
+    [UseFiltering]
+    [UseSorting]
     public IQueryable<Student> GetStudents(SchoolContext schoolContext)
         => schoolContext.Students;
 
