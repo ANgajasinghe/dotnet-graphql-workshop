@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet-graphql-workshop", "dotnet-graphql-workshop\dotnet-graphql-workshop.csproj", "{BF53A9BF-F9DC-4C42-ACC6-BDAD7916551D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "code365University", "code365University\code365University.csproj", "{BC899D5E-EF16-485D-8B0A-44D73232469B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF53A9BF-F9DC-4C42-ACC6-BDAD7916551D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF53A9BF-F9DC-4C42-ACC6-BDAD7916551D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF53A9BF-F9DC-4C42-ACC6-BDAD7916551D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF53A9BF-F9DC-4C42-ACC6-BDAD7916551D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC899D5E-EF16-485D-8B0A-44D73232469B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC899D5E-EF16-485D-8B0A-44D73232469B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC899D5E-EF16-485D-8B0A-44D73232469B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC899D5E-EF16-485D-8B0A-44D73232469B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FAF2061-D2B5-402C-992F-E1E8C33C4BC4}
+	EndGlobalSection
+EndGlobal
