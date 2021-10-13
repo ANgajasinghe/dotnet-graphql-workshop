@@ -1,4 +1,5 @@
 ﻿using dotnet_graphql_workshop.Application.Speakers.Command;
+using dotnet_graphql_workshop.Application.Tracks;
 using dotnet_graphql_workshop.Domain;
 using dotnet_graphql_workshop.Persistence;
 using HotChocolate;
@@ -24,7 +25,10 @@ public class Mutation
     //  }
     //}
     public async Task<AddSpeakerPayload> AddSpeakerAsync(AddSpeaker input,[Service] IMediator mediator)
-        => await mediator.Send(input);   
-    
+        => await mediator.Send(input);
+
+    public async Task<AddTrackPayload> AddTrackAsync(AddTrack input, [Service] IMediator mediator)
+        => await mediator.Send(input);
+
 }
 
