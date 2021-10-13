@@ -1,7 +1,6 @@
-﻿using dotnet_graphql_workshop.Application.Speakers.Command;
+﻿using dotnet_graphql_workshop.Application.Sessions;
+using dotnet_graphql_workshop.Application.Speakers.Command;
 using dotnet_graphql_workshop.Application.Tracks;
-using dotnet_graphql_workshop.Domain;
-using dotnet_graphql_workshop.Persistence;
 using HotChocolate;
 using MediatR;
 
@@ -28,6 +27,12 @@ public class Mutation
         => await mediator.Send(input);
 
     public async Task<AddTrackPayload> AddTrackAsync(AddTrack input, [Service] IMediator mediator)
+        => await mediator.Send(input);
+
+    public async Task<AddSessionPayload> AddSessionAsync(AddSession input, [Service] IMediator mediator)
+        => await mediator.Send(input);
+
+    public async Task<AddSessionPayload> UpdateSessionAsync(int id, UpdateSession input, [Service] IMediator mediator)
         => await mediator.Send(input);
 
 }
